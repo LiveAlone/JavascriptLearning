@@ -118,27 +118,162 @@
 // console.log(x, y);
 
 // build date function 
-function buildDate({
-    year,
-    month,
-    day,
-    hour = 0,
-    minute = 0,
-    second = 0
-}) {
-    return new Date(year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
-}
-console.log(buildDate({
-    year: 2017,
-    month: 1,
-    day: 1
-}));
-console.log(buildDate({
-    year: 2017,
-    month: 1,
-    day: 1,
-    hour: 20,
-    minute: 15
-}));
+// function buildDate({
+//     year,
+//     month,
+//     day,
+//     hour = 0,
+//     minute = 0,
+//     second = 0
+// }) {
+//     return new Date(year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second);
+// }
+// console.log(buildDate({
+//     year: 2017,
+//     month: 1,
+//     day: 1
+// }));
+// console.log(buildDate({
+//     year: 2017,
+//     month: 1,
+//     day: 1,
+//     hour: 20,
+//     minute: 15
+// }));
+
+// 定义对应的字段方法
+// var xiaoming = {
+//     name: '小明',
+//     birth: '1990',
+//     age: function(){
+//         var year = new Date().getFullYear();
+//         return year - this.birth;
+//     }
+// }
+
+// console.log(xiaoming.age);
+// console.log(xiaoming.age());
+
+// 移动对象方法定义， this 对象调用链指向
+// function getAge(){
+//     var year = new Date().getFullYear();
+//     return year - this.birth;  
+// }
+
+// var xiaoming = {
+//     name: '小明',
+//     birth: '1990',
+//     age: getAge
+// }
+// console.log(xiaoming.age());
+// console.log(getAge());
+
+// 通过 apply 的方式控制 this 的指向
+// function getAge() {
+//     var y = new Date().getFullYear();
+//     return y - this.birth;
+// }
+
+// var xiaoming = {
+//     name: '小明',
+//     birth: 1990,
+//     age: getAge
+// };
+
+// console.log(xiaoming.age()); // 25
+// console.log(getAge.apply(xiaoming, [])); // 25, this指向xiaoming, 参数为空
+
+// apply 通过数组的传递方式, call 顺序传入对象
+// console.log(Math.max.apply(null, [3, 5, 4])); // 5
+// console.log(Math.max.call(null, 3, 5, 4)); // 5
+
+// map， 通过高阶函数方式， 支持函数调用
+// function pow(x){
+//     return x*x;
+// }
+// var intArray = [1,2,3,4,5];
+// console.log(intArray.map(pow));
+// console.log(intArray);
+
+// reduce 数据合并放电视
+// var intArray = [1,2,3,4,5];
+// console.log(intArray.reduce(function(x, y){
+//     return x + y;
+// }));
+// console.log(intArray);
+
+// filter 支持过滤配置方式
+// var arr = ['A', 'B', 'C'];
+// var r = arr.filter(function (element, index, self) {
+//     console.log(element); // 依次打印'A', 'B', 'C'
+//     console.log(index); // 依次打印0, 1, 2
+//     console.log(self); // self就是变量arr
+//     return true;
+// });
+
+// 闭包支持， 函数参数包含对应接口参数
+// function lazy_sum(arr) {
+//     var sum = function () {
+//         return arr.reduce(function (x, y) {
+//             return x + y;
+//         });
+//     }
+//     return sum;
+// }
+// var f = lazy_sum([1, 2, 3, 4, 5]); // function sum()
+// console.log(f());
+
+// function count() {
+//     var arr = [];
+//     for (var i=1; i<=3; i++) {
+//         arr.push(function () {
+//             return i * i;
+//         });
+//     }
+//     return arr;
+// }
+
+// function count() {
+//     var arr = [];
+//     for (var i=1; i<=3; i++) {
+//         arr.push((function (n) {
+//             return function () {
+//                 return n * n;
+//             }
+//         })(i));
+//     }
+//     return arr;
+// }
+
+// var results = count();
+// var f1 = results[0];
+// var f2 = results[1];
+// var f3 = results[2];
+// console.log(f1(), f2(), f3());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
