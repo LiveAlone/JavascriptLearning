@@ -251,6 +251,18 @@
 // var f3 = results[2];
 // console.log(f1(), f2(), f3());
 
+// generator 函数生成器执行方式
+function* foo(x) {
+    yield x+1;
+    yield x+2;
+    return x+3;
+}
+var k = foo(10);
+console.log(k.next());
+console.log(k.next());
+console.log(k.next());
+
+// 通过 yield方式 执行 避免 ajax 异步调用方式
 
 
 
