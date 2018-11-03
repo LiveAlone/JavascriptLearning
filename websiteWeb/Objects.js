@@ -1,23 +1,23 @@
-// var xiaoming = {
-//     name: '小明',
-//     birth: 1990,
-//     school: 'No.1 Middle School',
-//     height: 1.70,
-//     weight: 65,
-//     score: null
-// };
+var xiaoming = {
+    name: '小明',
+    birth: 1990,
+    school: 'No.1 Middle School',
+    height: 1.70,
+    weight: 65,
+    score: null
+};
 
-// // console.log(xiaoming.name);
-// // console.log(xiaoming['name']);
+// console.log(xiaoming.name);
+// console.log(xiaoming['name']);
 
-// // 添加属性方式
-// // console.log(xiaoming.name2);
-// // xiaoming.name2 = 'again';
-// // console.log(xiaoming.name2);
-// // delete xiaoming.name2;
-// // console.log(xiaoming.name2);
-// // console.log('name' in xiaoming);
-// // console.log('name2' in xiaoming);
+// 添加属性方式
+// console.log(xiaoming.name2);
+// xiaoming.name2 = 'again';
+// console.log(xiaoming.name2);
+// delete xiaoming.name2;
+// console.log(xiaoming.name2);
+// console.log('name' in xiaoming);
+// console.log('name2' in xiaoming);
 // console.log(xiaoming.hasOwnProperty('name'));
 // console.log(xiaoming.hasOwnProperty('toString'));
 
@@ -67,7 +67,7 @@
 //         console.log(this.name + ' is running...');
 //     }
 // };
-
+//
 // function createStudent(name) {
 //     // 基于Student原型创建一个新对象:
 //     var s = Object.create(Student);
@@ -75,7 +75,7 @@
 //     s.name = name;
 //     return s;
 // }
-
+//
 // var xiaoming = createStudent('小明');
 // xiaoming.run(); // 小明 is running...
 // console.log(xiaoming.height);
